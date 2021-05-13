@@ -5,7 +5,7 @@ const FavouritesList = ({ favouriteCountries }) => {
 
     const favCountries = favouriteCountries.map((country, index) => {
         return (
-                <li value={index} key={index}>{country.name}</li>
+                <li className="fav-list-li" value={index} key={index}>{country.name}</li>
         )
     })
 

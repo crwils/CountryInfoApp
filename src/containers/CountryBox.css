@@ -1,4 +1,35 @@
 body {
-    background-color: blue;
+    /* padding: 20px; */
+    background-color: rgb(160, 244, 255);
+}
+
+.body-left-side {
+
+}
+
+select {
+    width: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.country-list {
     padding: 20px;
 }
+
+.fav-list-li {
+    padding-top:3px;
+    list-style-type:square;
+}
+
+.aside {
+    background-color: white;
+    padding: 10px;
+    height: 1500px;
+    width:150px;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import './'
+import './countryDetail.css';
 
 
 const CountryDetail = ({ selectedCountry, addFavouriteCountry, favouriteCountries, countries }) => {
@@ -9,26 +9,31 @@ const CountryDetail = ({ selectedCountry, addFavouriteCountry, favouriteCountrie
         if (!favouriteCountries.includes(selectedCountry)) {
             addFavouriteCountry(selectedCountry);
         }
-
     }
-    
+
+    const countryLanguages = selectedCountry.languages.map(language => {
+        return `${language.name}`
+    })
+
+    const joined = countryLanguages.join(", ")
+
     const neebs = selectedCountry.borders.map(alpha3code => {
-        
-        return (
-            <p>{alpha3code}</p>
-            )
-        })
-        
-        return (
-            <div>
-                <h3>{selectedCountry.name}</h3>
-                <p>Population: {selectedCountry.population}</p>
-                <p>Capital: {selectedCountry.capital}</p>
-                <img width="200" height="100" src={selectedCountry.flag} alt={selectedCountry.name} />
-                <p>Neighbouring Countries:</p>
-                <p>{neebs}</p>
-                <button onClick={handleButtonSubmit}>Add to favourites</button>
-            </div>
+        const country = countries.find(findCountry => findCountry.alpha3Code === alpha3code)
+            return <li className='neebs-li'> {country.name} </li>  
+    })
+    
+    return (
+        <div className="detail-box">
+            <h3>{selectedCountry.name}</h3>
+            <img width="200" height="100" src={selectedCountry.flag} alt={selectedCountry.name} />
+            <p><b>Population:</b> {selectedCountry.population}</p>
+            <p><b>Continent:</b> {selectedCountry.region}</p>
+            <p><b>Capital:</b> {selectedCountry.capital}</p>
+            <p><b>Languages:</b> {joined}</p>
+            <p><u>Neighbours:</u></p>
+            <p>{neebs}</p>
+            <button onClick={handleButtonSubmit}>Add to favourites</button>
+        </div>
     )
 }
 
@@ -36,7 +41,9 @@ const CountryDetail = ({ selectedCountry, addFavouriteCountry, favouriteCountrie
 export default CountryDetail;
 
 
-
+   // const neebs = selectedCountry.borders.map(alpha3code => {
+    //     return findNeebs(alpha3code)    
+    //     })
 
 
 
@@ -60,6 +67,7 @@ export default CountryDetail;
         //         return <p>{countryName}</p>
 //     }
 // })
+
 // for (let country in countries){
 //     const countryName = country.name
 //     const countryCode = country.alpha3code
