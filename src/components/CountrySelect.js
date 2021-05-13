@@ -21,9 +21,8 @@ const CountrySelector = ({ countries, onCountrySelected, addFavouriteCountry }) 
 
     return (
         <>
-            <label>Select Country: </label><br/>
             <select defaultValue="" onChange={handleChange}>
-                <option value="" selected>Choose a Country</option>
+                <option value="" selected>Select Country</option>
                 {countryOptions}
             </select>
         </>

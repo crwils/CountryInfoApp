@@ -1,3 +1,8 @@
 .detail-box {
     display: auto;
+    color: #210070;
+}
+
+.neebs-li  {
+    list-style-type:"-";
 }

@@ -1,10 +1,7 @@
 body {
     /* padding: 20px; */
-    background-color: rgb(160, 244, 255);
-}
 
-.body-left-side {
-
+    background-color: white;
 }
 
 select {
@@ -23,13 +20,41 @@ select {
 
 .fav-list-li {
     padding-top:3px;
-    list-style-type:square;
+    list-style-type: none;
+    color: white;
+}
+
+u {
+    color: white;
+    font-weight: bolder;
 }
 
 .aside {
-    background-color: white;
+    background-color:#8BD8BD;
     padding: 10px;
     height: 1500px;
     width:150px;
+}
+
+button:hover {
+    background-color:#8BD8BD;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: azure;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #210070;
+    color: white;
+}
+
+header {
+    font-weight: bolder;
 }
 

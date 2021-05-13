@@ -31,6 +31,11 @@ const CountryBox = () => {
 
     return (
         <Fragment>
+            <div className="header">
+                <header>
+                    Countries of the World 🌍
+                </header>
+            </div>
             <div className="container">
                 <div className="country-list">
                     <CountrySelector countries={countries} onCountrySelected={onCountrySelected} addFavouriteCountry={addFavouriteCountry} />

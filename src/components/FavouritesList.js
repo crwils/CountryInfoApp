@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const FavouritesList = ({ favouriteCountries }) => {
 
@@ -10,7 +10,7 @@ const FavouritesList = ({ favouriteCountries }) => {
     })
 
     return (
-        <div>{favCountries}</div>
+            <div>{favCountries}</div>
     )
 
 }

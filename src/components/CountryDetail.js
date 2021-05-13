@@ -21,18 +21,24 @@ const CountryDetail = ({ selectedCountry, addFavouriteCountry, favouriteCountrie
         const country = countries.find(findCountry => findCountry.alpha3Code === alpha3code)
             return <li className='neebs-li'> {country.name} </li>  
     })
+
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
+    const pop = formatNumber(selectedCountry.population)
     
     return (
         <div className="detail-box">
-            <h3>{selectedCountry.name}</h3>
+            <h2>{selectedCountry.name}</h2>
             <img width="200" height="100" src={selectedCountry.flag} alt={selectedCountry.name} />
-            <p><b>Population:</b> {selectedCountry.population}</p>
+            <p><b>Population:</b> {pop}</p>
             <p><b>Continent:</b> {selectedCountry.region}</p>
             <p><b>Capital:</b> {selectedCountry.capital}</p>
             <p><b>Languages:</b> {joined}</p>
-            <p><u>Neighbours:</u></p>
+            <p><b>Neighbouring Countries:</b></p>
             <p>{neebs}</p>
-            <button onClick={handleButtonSubmit}>Add to favourites</button>
+            <button onClick={handleButtonSubmit}>Add Favourite</button>
         </div>
     )
 }
